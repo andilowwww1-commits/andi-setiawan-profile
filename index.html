@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Andi Setiawan — Personal Profile</title>
+<meta name="description" content="Website profil pribadi Andi Setiawan">
+
+<!-- ===== Google Fonts ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+
+<!-- ===== Font Awesome (ikon) ===== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- ===== AOS - Animate On Scroll ===== -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+<!-- ===== CSS milik sendiri ===== -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================================================
+     PRELOADER — layar pembuka dengan animasi loading
+====================================================== -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="loader-ring"></div>
+    <p class="preloader-text preloader-line1">Selamat Datang</p>
+    <p class="preloader-text preloader-line2">Website Pribadi Andi Setiawan</p>
+  </div>
+</div>
+
+<!-- Progress bar scroll di paling atas halaman -->
+<div id="scroll-progress"></div>
+
+<!-- Cursor glow custom (mengikuti kursor / sentuhan) -->
+<div id="cursor-glow"></div>
+
+<!-- ======================================================
+     NAVBAR
+====================================================== -->
+<header class="navbar" id="navbar">
+  <a href="#hero" class="nav-logo">Andi<span>.</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#hero" class="nav-link active">Beranda</a>
+    <a href="#about" class="nav-link">Tentang</a>
+    <a href="#gallery" class="nav-link">Galeri</a>
+    <a href="#special" class="nav-link">Spesial</a>
+    <a href="#quotes" class="nav-link">Quote</a>
+    <a href="#social" class="nav-link">Sosial</a>
+  </nav>
+  <button id="navToggle" class="nav-toggle" aria-label="Buka menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ======================================================
+     HERO SECTION
+====================================================== -->
+<section id="hero" class="hero">
+  <canvas id="starCanvas"></canvas>
+
+  <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+    <div class="hero-photo-wrap floating">
+      <div class="hero-photo-glow"></div>
+      <img src="assets/images/profile.svg" alt="Foto Andi Setiawan" class="hero-photo" id="heroPhoto">
+    </div>
+
+    <h1 class="hero-name">Andi Setiawan</h1>
+    <p class="hero-tagline">
+      "Setiap perjalanan memiliki cerita, dan setiap cerita memiliki<br class="br-desktop">
+      seseorang yang menginspirasi."
+    </p>
+
+    <a href="#about" class="btn-ripple hero-cta">
+      <i class="fa-solid fa-arrow-down-long"></i> Jelajahi
+    </a>
+  </div>
+
+  <div class="scroll-indicator">
+    <span></span>
+    <p>scroll</p>
+  </div>
+</section>
+
+<!-- ======================================================
+     TENTANG SAYA
+====================================================== -->
+<section id="about" class="section about-section">
+  <p class="section-eyebrow" data-aos="fade-up">Kenali Aku</p>
+  <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Tentang Saya</h2>
+
+  <div class="glass-card about-card" data-aos="zoom-in" data-aos-delay="150">
+    <p class="about-text">
+      Saya adalah seseorang yang menyukai teknologi, desain website, fotografi, dan seni.
+      Saya percaya bahwa setiap karya memiliki cerita yang dapat dikenang. Bagi saya,
+      membangun sesuatu — baik itu baris kode maupun sebuah bingkai foto — adalah cara
+      untuk merawat kenangan agar tak lekang oleh waktu.
+    </p>
+
+    <div class="about-icons">
+      <div class="about-icon-item" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-code"></i>
+        <span>Teknologi</span>
+      </div>
+      <div class="about-icon-item" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-pen-ruler"></i>
+        <span>Desain Web</span>
+      </div>
+      <div class="about-icon-item" data-aos="fade-up" data-aos-delay="400">
+        <i class="fa-solid fa-camera-retro"></i>
+        <span>Fotografi</span>
+      </div>
+      <div class="about-icon-item" data-aos="fade-up" data-aos-delay="500">
+        <i class="fa-solid fa-palette"></i>
+        <span>Seni</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     GALERI FOTO
+====================================================== -->
+<section id="gallery" class="section gallery-section">
+  <p class="section-eyebrow" data-aos="fade-up">Jejak Visual</p>
+  <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Galeri Foto</h2>
+  <p class="section-subtitle" data-aos="fade-up" data-aos-delay="150">
+    Kumpulan momen yang ingin selalu saya kenang.
+  </p>
+
+  <!-- Grid galeri diisi otomatis oleh script.js dari daftar galleryImages -->
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<!-- Lightbox untuk melihat foto galeri secara penuh -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+  <img src="" alt="Pratinjau foto" id="lightboxImg" class="lightbox-img">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<!-- ======================================================
+     HALAMAN SPESIAL — "Untuk Seseorang yang Aku Kagumi"
+====================================================== -->
+<section id="special" class="section special-section">
+  <div class="floating-hearts" id="floatingHearts"></div>
+
+  <p class="section-eyebrow" data-aos="fade-up"><i class="fa-solid fa-heart"></i> Sebuah Persembahan</p>
+  <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Untuk Seseorang yang Aku Kagumi</h2>
+
+  <div class="glass-card special-card" data-aos="zoom-in" data-aos-delay="150">
+    <div class="special-sparkle"></div>
+    <p class="special-text" id="typingText"></p>
+    <span class="typing-cursor" id="typingCursor">|</span>
+  </div>
+</section>
+
+<!-- ======================================================
+     QUOTE SLIDER
+====================================================== -->
+<section id="quotes" class="section quote-section">
+  <div class="quote-slider glass-card" data-aos="fade-up">
+    <i class="fa-solid fa-quote-left quote-icon"></i>
+    <p class="quote-text" id="quoteText"></p>
+    <p class="quote-author" id="quoteAuthor"></p>
+    <div class="quote-dots" id="quoteDots"></div>
+  </div>
+</section>
+
+<!-- ======================================================
+     SOSIAL MEDIA
+====================================================== -->
+<section id="social" class="section social-section">
+  <p class="section-eyebrow" data-aos="fade-up">Terhubung Denganku</p>
+  <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Sosial Media</h2>
+
+  <div class="social-grid">
+    <a href="https://instagram.com/username" target="_blank" rel="noopener" class="social-btn ig" data-aos="fade-up" data-aos-delay="100">
+      <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+    </a>
+    <a href="https://facebook.com/username" target="_blank" rel="noopener" class="social-btn fb" data-aos="fade-up" data-aos-delay="200">
+      <i class="fa-brands fa-facebook"></i><span>Facebook</span>
+    </a>
+    <a href="https://tiktok.com/@username" target="_blank" rel="noopener" class="social-btn tt" data-aos="fade-up" data-aos-delay="300">
+      <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
+    </a>
+    <a href="https://wa.me/6280000000000" target="_blank" rel="noopener" class="social-btn wa" data-aos="fade-up" data-aos-delay="400">
+      <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+    </a>
+    <a href="mailto:andi.setiawan@email.com" class="social-btn em" data-aos="fade-up" data-aos-delay="500">
+      <i class="fa-solid fa-envelope"></i><span>Email</span>
+    </a>
+  </div>
+</section>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<footer class="footer">
+  <p class="footer-copy">&copy; 2026 Andi Setiawan</p>
+  <p class="footer-note">Dibuat dengan ketulusan, kenangan, dan sedikit harapan.</p>
+</footer>
+
+<!-- ======================================================
+     MUSIK LATAR — pemutar musik mengambang
+====================================================== -->
+<div class="music-player" id="musicPlayer">
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-toggle" id="musicToggle" aria-label="Putar / Jeda musik">
+    <i class="fa-solid fa-music" id="musicIcon"></i>
+  </button>
+
+  <div class="music-panel" id="musicPanel">
+    <div class="music-info">
+      <i class="fa-solid fa-compact-disc spinning" id="musicDisc"></i>
+      <div class="music-meta">
+        <p class="music-title">Musik Latar</p>
+        <p class="music-status" id="musicStatus">Dijeda</p>
+      </div>
+    </div>
+    <button class="music-play-btn" id="musicPlayBtn" aria-label="Play/Pause">
+      <i class="fa-solid fa-play" id="playIcon"></i>
+    </button>
+    <div class="music-volume">
+      <i class="fa-solid fa-volume-low"></i>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+      <i class="fa-solid fa-volume-high"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     BACK TO TOP
+====================================================== -->
+<button id="backToTop" aria-label="Kembali ke atas">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- ===== Script pihak ketiga ===== -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- ===== Script milik sendiri ===== -->
+<script src="script.js"></script>
+</body>
+</html>
