@@ -20,12 +20,12 @@
 // Untuk menambah foto baru: taruh gambar di folder assets/images/
 // lalu tambahkan nama filenya di array ini. Urutan array = urutan tampil.
 const galleryImages = [
-  "assets/images/gallery-1.svg",
-  "assets/images/gallery-2.svg",
-  "assets/images/gallery-3.svg",
-  "assets/images/gallery-4.svg",
-  "assets/images/gallery-5.svg",
-  "assets/images/gallery-6.svg"
+  "assets/images/1693626862697_jx1kwb_2_0.jpg",
+  "assets/images/84ec36e42b96daef6e7397e6e1e238ab.jpg",
+  "assets/images/IMG_20230623_060708.jpg",
+  "assets/images/file_00000000ca54720793a22e3887c51c2a.png",
+  "assets/images/quality_restoration_20260421200111919.jpg",
+  "assets/images/quality_restoration_20260627185733270.jpg"
 ];
 
 // Kalimat yang akan diketik otomatis di bagian "Untuk Seseorang yang Aku Kagumi"
